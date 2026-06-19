@@ -1,0 +1,18 @@
+
+#CREATE TABLES:
+
+
+CREATE TABLE Teams 
+(team_id INT PRIMARY KEY, team_name VARCHAR(30) UNIQUE, captain VARCHAR(30));
+
+CREATE TABLE Players 
+(player_id INT, player_name VARCHAR(30), team_id INT, role VARCHAR(30), UNIQUE(player_id, team_id));
+
+CREATE TABLE Matches
+(match_id INT PRIMARY KEY, team1_id INT, team2_id INT, match_date DATE,
+ venue VARCHAR(30), winner_id INT, team1_runs INT, team2_runs INT, 
+ team1_balls INT, team2_balls INT, team1_wickets INT, team2_wickets INT);
+
+CREATE TABLE Scorecard
+(match_id INT PRIMARY KEY, player_id INT, team_id INT, runs INT, balls INT, 
+fours INT, sixes INT, wickets INT, UNIQUE(player_id, team_id));
