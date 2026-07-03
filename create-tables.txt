@@ -14,5 +14,5 @@ CREATE TABLE Matches
  team1_balls INT, team2_balls INT, team1_wickets INT, team2_wickets INT);
 
 CREATE TABLE Scorecard
-(match_id INT PRIMARY KEY, player_id INT, team_id INT, runs INT, balls INT, 
-fours INT, sixes INT, wickets INT, UNIQUE(player_id, team_id));
+(match_id INT, player_id INT, team_id INT, runs INT, balls INT, 
+fours INT, sixes INT, wickets INT, UNIQUE(match_id, player_id, team_id));
